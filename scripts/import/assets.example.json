@@ -1,0 +1,26 @@
+{
+  "maps": [
+    {"folder": "/Game/MyGame/Maps", "name": "Main"}
+  ],
+  "materials": [
+    {"kind": "flat", "folder": "/Game/MyGame/Materials", "name": "M_Lit"},
+    {"kind": "flat_unlit", "folder": "/Game/MyGame/Materials", "name": "M_Unlit"},
+    {"kind": "flat_additive", "folder": "/Game/MyGame/Materials", "name": "M_Additive"},
+    {"kind": "model", "folder": "/Game/MyGame/Materials", "name": "M_Model"}
+  ],
+  "textures": [
+    {"file": "art/ui/T_Logo.png", "dest": "/Game/MyGame/UI", "name": "T_Logo", "ui": true, "compression": "TC_EDITOR_ICON"},
+    {"file": "art/T_Ground.png", "dest": "/Game/MyGame/Textures", "name": "T_Ground", "max_size": 1024},
+    {"file": "art/T_SealCircle.png", "dest": "/Game/MyGame/Textures", "name": "T_SealCircle", "never_stream": true, "lod_bias": -1}
+  ],
+  "models": [
+    {"file": "models/hero.glb", "base": "/Game/MyGame/Models", "name": "hero",
+     "parent": "/Game/MyGame/Materials/M_Model", "scalars": {"EmissiveBoost": 3.0}},
+    {"file": "models/prop_rock.glb", "base": "/Game/MyGame/Models", "name": "prop_rock",
+     "parent": "/Game/MyGame/Materials/M_Model", "max_tex": 512, "collision": true}
+  ],
+  "sounds": [
+    {"dir": "audio/sfx", "dest": "/Game/MyGame/Audio/SFX"},
+    {"file": "audio/music/theme_loop.wav", "dest": "/Game/MyGame/Audio/Music"}
+  ]
+}

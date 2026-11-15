@@ -1,0 +1,13 @@
+[
+  {"name": "title_click", "click": [640, 600], "expect": "SG_STATE Intro", "timeout": 20, "after_ms": 1500},
+  {"name": "intro_next", "key": "Space", "expect": "SG_INTRO 2", "after_ms": 1200},
+  {"name": "intro_skip", "key": "Escape", "expect": "SG_STATE Garage", "timeout": 20, "after_ms": 1500},
+  {"shot": "garage"},
+  {"name": "help_opens", "key": "h", "expect": "SG_HELP 1", "after_ms": 800},
+  {"name": "help_closes", "key": "h", "expect": "SG_HELP 0", "new": true},
+  {"name": "launch_button", "click": [890, 143], "expect": "SG_STATE Launch", "timeout": 20, "after_ms": 2500},
+  {"name": "skip_cutscene", "key": "Space", "expect": "SG_STATE Explore", "timeout": 20},
+  {"name": "mouse_look", "drag": [[640, 360], [940, 360]], "steps": 15, "expect": "SG_POS", "new": true},
+  {"name": "walk", "hold": "w", "ms": 1300, "expect": "SG_POS", "new": true},
+  {"shot": "explore_after_w"}
+]

@@ -1,0 +1,19 @@
+# Private working notes (never tracked, see CLAUDE.md)
+CLAUDE.md
+AGENTS.md
+docs/*.md
+.claude/
+
+# Python / Node
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+
+# Outputs of the tools
+runs/
+*.mp4
+*.wav
+
+.DS_Store
