@@ -1,22 +1,11 @@
-# unreal-director
+# Unreal Director
 
-**You direct, AI agents build. Make Unreal Engine games without ever opening the editor.**
+**Make games agentically with Unreal Engine without even opening Unreal Editor.**
 
 AI coding agents cannot click through the Unreal Editor, watch a play session or drag an asset into a folder.
-unreal-director is the set of scripts, conventions and hard-won notes that replaces each of those clicks with
+unreal-director is the set of scripts, skills, conventions and hard-won notes that replaces each of those clicks with
 something an agent can do: code, editor Python run headlessly, command-line packaging, self-playing builds that
 print what happens, and screenshots the agent checks itself.
-
-## Made with it: Starseal
-
-[![Starseal key art](docs/images/starseal_keyart.jpg)](https://neozax.itch.io/starseal)
-
-**Starseal** was made in 4 days for the 2026 Epic AI MegaJam with Claude Code agents, in UE 5.9, shipped to the
-browser (Wasm + WebGPU). Nobody opened the Unreal Editor during the whole project.
-
-- Play it: [neozax.itch.io/starseal](https://neozax.itch.io/starseal)
-- Trailer: [youtu.be/boSqWXeE2nA](https://youtu.be/boSqWXeE2nA)
-- Dev log: [Talking a game into existence](https://zinanx.substack.com/p/talking-a-game-into-existence-starseal)
 
 ## What's inside
 
@@ -52,6 +41,13 @@ Guides: [log protocol](guides/log-protocol.md), [packaging](guides/packaging-was
 [itch.io](guides/itch-deploy.md), [headless import](guides/headless-import.md),
 [playtesting](guides/playtesting.md), [screenshot QA](guides/screenshot-qa.md), [gotchas](guides/gotchas.md).
 
+## Made with it: Starseal
+
+[![Starseal key art](docs/images/starseal_keyart.jpg)](https://neozax.itch.io/starseal)
+
+**Starseal** was made in 4 days for the 2026 Epic AI MegaJam with Claude Code agents, in UE 5.9, shipped to the
+browser (Wasm + WebGPU). Unreal Editor was never opened once during the entire process. ([Play link](https://neozax.itch.io/starseal))
+
 ## Quick start
 
 Prerequisites:
@@ -79,10 +75,8 @@ To use the skills, copy (or symlink) `skills/<name>` into your project's `.claud
 
 ## Status
 
-Extracted from a 4-day jam project. Tested on UE 5.9 + Wasm (WebGPU) on macOS, with one game. It is a toolbox with
-sharp edges, not a polished library: the game-side C++ is reference code you copy, the switch names carry Starseal's
-`SG` prefix, and some scripts assume a Mac (paths of the editor binary, the mouse guard).
+Extracted from a 4-day jam project. Tested on UE 5.9 + Wasm (WebGPU) on macOS. Some scripts assume a Mac (paths of the editor binary, the mouse guard).
 
 ## License
 
-MIT, © 2026 Moon Deer Studio. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
