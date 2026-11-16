@@ -76,19 +76,22 @@ browser (Wasm + WebGPU). Unreal Editor was never opened once during the entire p
 
 Prerequisites:
 
-- Unreal Engine 5.9 **built from source** (the Wasm platform is not in the launcher build), emsdk at the version the
-  engine asks for, a C++ project.
+- Unreal Engine 5.9 and a C++ project. The launcher build is enough for headless import, native playtests and the
+  QC tools.
+- **For web builds only:** Unreal Engine 5.9 **built from source** (the Wasm platform is not in the launcher build)
+  and emsdk at the version the engine asks for. This is needed by `scripts/web/` and `scripts/build/`.
 - Python 3.10+ (`pip install -r requirements.txt`, then `playwright install chromium`), ffmpeg for the video tools.
 - Node.js (Playwright's runtime), and [Claude Code](https://claude.com/claude-code) or another agent to drive it.
 
 ```bash
-export UE=/path/to/UnrealEngine WASM_EMSDK_ROOT=/path/to/emsdk UPROJECT=/path/to/MyGame.uproject
+export UE=/path/to/UnrealEngine UPROJECT=/path/to/MyGame.uproject
+export WASM_EMSDK_ROOT=/path/to/emsdk   # web builds only
 
 # 1. give the game an autoplay switch and the log lines: guides/log-protocol.md, reference/
 # 2. import assets without the editor
 UD_MANIFEST=$PWD/assets.json "$UE/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor" "$UPROJECT" \
   -run=pythonscript -script=$PWD/scripts/import/import_manifest.py -unattended -nopause -nosplash -nullrhi
-# 3. package for the web, check it, play it
+# 3. (web) package for the browser, check it, play it
 scripts/build/package_wasm.sh "$UPROJECT" /Game/MyGame/Maps/Main $PWD/Builds/MyGame_Wasm
 python3 scripts/build/prepare_web_upload.py Builds/MyGame_Wasm/Wasm --patch-sw
 python3 scripts/web/autoplay_web.py --stage Builds/MyGame_Wasm/Wasm --out runs/web --require Title,Ending
