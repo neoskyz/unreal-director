@@ -101,7 +101,7 @@ To use the skills, copy (or symlink) `skills/<name>` into your project's `.claud
 
 ## Status
 
-Extracted from a 4-day jam project. Tested on UE 5.9 + Wasm (WebGPU) on macOS. Some scripts assume a Mac (paths of the editor binary, the mouse guard).
+Tested on UE 5.9 + Wasm (WebGPU) on macOS. Some scripts assume a Mac (paths of the editor binary, the mouse guard).
 
 ## License
 
