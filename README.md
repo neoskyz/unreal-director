@@ -1,6 +1,6 @@
 # Unreal Director
 
-**Make games agentically with Unreal Engine without even opening Unreal Editor.**
+**Make games agentically with Unreal Engine without opening Unreal Editor.**
 
 AI coding agents cannot click through the Unreal Editor, watch a play session or drag an asset into a folder.
 unreal-director is the set of scripts, skills, conventions and hard-won notes that replaces each of those clicks with
