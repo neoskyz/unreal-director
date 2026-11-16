@@ -41,6 +41,30 @@ Guides: [log protocol](guides/log-protocol.md), [packaging](guides/packaging-was
 [itch.io](guides/itch-deploy.md), [headless import](guides/headless-import.md),
 [playtesting](guides/playtesting.md), [screenshot QA](guides/screenshot-qa.md), [gotchas](guides/gotchas.md).
 
+## Example: one playtest note, start to finish
+
+You play the build and say what is wrong in plain words. The agent turns that into code, a new build and proof.
+This one is from the last day of Starseal:
+
+> **You:** In battle, everything should stand still. The tortoise's snake head slides out of the frame and the fox's
+> tails look off. Also, Space should pause the opening film, not skip it.
+
+What the agent does with this repo:
+
+1. **Changes the code.** Turns off the idle motion in the creature and hero `Tick`, and rebinds Space in the intro.
+2. **Packages without the editor.** The `wasm-package-and-test` skill runs `build/package_wasm.sh`, then
+   `build/prepare_web_upload.py` to check the size limits and the service-worker headers.
+3. **Plays the build itself.** `web/autoplay_web.py` runs the game to the end with its autoplay switch, waits for
+   the log lines that prove each state was reached, and takes a screenshot at every named moment, battles included.
+   `web/input_steps_web.py` presses Space during the film and waits for the log line that says the film paused, not that it ended.
+4. **Looks at the result.** `qc/contact_sheet.py` shows where to look; the agent then opens those screenshots at full
+   size and compares frames, so a moving head shows up as a difference.
+5. **Reports back** with the screenshots, the package size and what it could not check, and pushes the build to
+   itch.io with `build/itch_push.sh` once you say go.
+
+In Starseal, the code changes and the new package for six notes like these took about 20 minutes. Nobody opened
+the editor.
+
 ## Made with it: Starseal
 
 [![Starseal key art](docs/images/starseal_keyart.jpg)](https://neozax.itch.io/starseal)
