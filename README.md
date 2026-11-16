@@ -41,10 +41,9 @@ Guides: [log protocol](guides/log-protocol.md), [packaging](guides/packaging-was
 [itch.io](guides/itch-deploy.md), [headless import](guides/headless-import.md),
 [playtesting](guides/playtesting.md), [screenshot QA](guides/screenshot-qa.md), [gotchas](guides/gotchas.md).
 
-## Example: one playtest note, start to finish
+## Example usage
 
 You play the build and say what is wrong in plain words. The agent turns that into code, a new build and proof.
-This one is from the last day of Starseal:
 
 > **You:** In battle, everything should stand still. The tortoise's snake head slides out of the frame and the fox's
 > tails look off. Also, Space should pause the opening film, not skip it.
